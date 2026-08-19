@@ -1,0 +1,2 @@
+timestamp,agent_id,action_type,target,inputs_snapshot_ref,logic_version,threshold_check,authorized_by,escalated,escalated_to,outcome,reversible,notes
+2026-08-01T14:22:00Z,A-07,refund_issued,order#48291,s3://logs/a07/48291-inputs.json,refund-flow-v3,under_200_usd,standing-grant-2026-02,no,,completed,yes,example row - delete
