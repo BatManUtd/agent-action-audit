@@ -29,6 +29,11 @@ MIN_SHORT_SIDE = 720           # 720p floor; 1080p recommended
 TARGET_ASPECT = Fraction(9, 16)
 ASPECT_TOLERANCE = 0.02        # 9:16 == 0.5625; allow a couple of percent
 FPS_CANDIDATES = (30, 25, 24)  # auto target_fps prefers an even divisor of these
+# ffprobe happily reports a still image as a 25 fps video stream with no duration,
+# so a bare "0 frames" failure would misdiagnose the most common mistake: pointing
+# this at a photo instead of a clip.
+STILL_IMAGE_CODECS = {"png", "mjpeg", "bmp", "gif", "tiff", "webp", "jpeg2000"}
+
 
 GREEN, YELLOW, RED, DIM, RESET = "\033[32m", "\033[33m", "\033[31m", "\033[2m", "\033[0m"
 
@@ -90,6 +95,19 @@ def main() -> int:
 
     data = probe(args.video)
     stream, fmt = data["streams"][0], data.get("format", {})
+
+    # A still image has no timeline to draw 121 frames from, and no amount of
+    # cropping fixes that -- say so directly instead of reporting "0 frames".
+    format_name = fmt.get("format_name", "")
+    codec = stream.get("codec_name", "")
+    has_timeline = bool(stream.get("nb_frames") or stream.get("duration") or fmt.get("duration"))
+    if format_name.endswith("_pipe") or (codec in STILL_IMAGE_CODECS and not has_timeline):
+        print(f"\n{args.video}")
+        print(f"  {RED}FAIL{RESET}  Not a video          "
+              f"{stream.get('width')}x{stream.get('height')} still image ({codec}).")
+        print(f"\n{RED}Not ready:{RESET} 4DAnyone animates a person across time -- it needs a "
+              f"video clip of at least {REQUIRED_FRAMES} frames, not a single frame.\n")
+        return 1
 
     width, height = int(stream["width"]), int(stream["height"])
     # Respect rotation metadata: a phone clip is often stored landscape.
