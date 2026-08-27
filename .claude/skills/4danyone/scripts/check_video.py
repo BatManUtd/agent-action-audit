@@ -105,8 +105,10 @@ def main() -> int:
         print(f"\n{args.video}")
         print(f"  {RED}FAIL{RESET}  Not a video          "
               f"{stream.get('width')}x{stream.get('height')} still image ({codec}).")
-        print(f"\n{RED}Not ready:{RESET} 4DAnyone animates a person across time -- it needs a "
-              f"video clip of at least {REQUIRED_FRAMES} frames, not a single frame.\n")
+        print(f"\n{RED}Not ready:{RESET} this is one frame, not a clip.\n")
+        print(f"  To reconstruct from a single image anyway, expand it into a still clip:")
+        print(f"    python still_to_clip.py {args.video} out.mp4 --check")
+        print(f"  That mode is experimental -- read references/single-image.md first.\n")
         return 1
 
     width, height = int(stream["width"]), int(stream["height"])

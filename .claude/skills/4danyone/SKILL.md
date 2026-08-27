@@ -91,6 +91,31 @@ to 1080p) over pushing a marginal clip through a 20-minute run.
 `--start_time` selects where the 121-frame window begins, which is the cheapest
 way to skip a shaky opening.
 
+## Starting from a single image
+
+A still photo can go through this pipeline. The 121-frame contract constrains the
+*decoder*, not the model: `fdanyone/video.py` already reuses frames when
+timestamps repeat, so holding one frame for 121 timestamps degenerates the run
+into single-image novel-view synthesis — an orbit of a motionless person, which
+the Nerfstudio export then turns into a static 3DGS.
+
+```bash
+python .claude/skills/4danyone/scripts/still_to_clip.py photo.jpg subject.mp4 --check
+```
+
+Then run inference on `subject.mp4` exactly like any other input.
+
+Two things to tell the user before they spend a GPU hour on it. The authors
+neither test nor benchmark static input, so there is no quality claim to make —
+a 6-view run is the only way to find out. And one frame reveals nothing about
+the subject's back: with video the person turns and shows you, whereas here
+everything unseen is invented by the generator's prior. If reconstruction is the
+real goal rather than this pipeline specifically, purpose-built single-image
+methods (PIFuHD, ECON, SIFU, Human3Diffusion) start from better assumptions.
+
+Rig advice inverts here — see `references/single-image.md` for why coverage
+matters more when the subject never moves, plus crop framing and encoding notes.
+
 ## Step 3 — Choose a camera rig
 
 The rig is defined by how many yaw positions per ring (`views_per_layer`), which
@@ -181,6 +206,7 @@ which are auto-detected when installed.
 Read these on demand rather than up front:
 
 - `references/cli.md` — every `inference.py` argument, with defaults and valid ranges.
+- `references/single-image.md` — the static-input mode: what is known, what is guesswork, crop framing, rig choice.
 - `references/outputs.md` — output layout in detail, plus the Nerfstudio/3DGS workflow.
 - `references/performance.md` — measured runtimes, peak VRAM, attention backends.
 - `references/upstream.md` — provenance, license, citation, known limitations.
