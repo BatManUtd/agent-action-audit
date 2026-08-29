@@ -34,7 +34,7 @@ Any Chromium works — point it at your own binary if that path doesn't exist.
 Bands live in `wallpaper.html` as `<section class="band">`. Rows are
 `code · name · leader · descriptor`. The layout distributes bands evenly
 down the field on its own, so adding or removing entries re-balances
-without touching the CSS — but update the footer count (`XXIV entries`)
+without touching the CSS — but update the footer count (`XX entries`)
 and the plotted-point glyph in each band head, whose dot count mirrors
 the number of entries in that band.
 
