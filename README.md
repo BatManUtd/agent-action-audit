@@ -20,6 +20,12 @@ The audit we run before we automate anything. Five documents, three templates, o
 | 4 | [`audit/04-gap-register.md`](audit/04-gap-register.md) | Capability minus authority = your exposure, ranked |
 | 5 | [`audit/05-reconstruction-test.md`](audit/05-reconstruction-test.md) | The uncomfortable one. See below. |
 
+## The companion build
+
+The audit tells you what to write down. [`grok-marketing-team/`](grok-marketing-team/) shows what it looks like to answer those questions *before* you build: eight Grok-powered marketing bots, six of which hold no consequential capability at all, one narrow-scoped data role, and a single gated Publisher that is the only bot able to make anything leave the building.
+
+It is the same five capability classes and the same approval matrix, applied at design time instead of discovered at audit time.
+
 Templates in [`templates/`](templates/): a minimal agent decision log, an approval matrix your automations can actually read, and the post-incident question set.
 
 A worked example from a real (anonymized) engagement in [`examples/revops-stack-audit.md`](examples/revops-stack-audit.md).
