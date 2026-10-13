@@ -52,3 +52,9 @@ Built from real engagements by [Opsmarshal](https://www.opsmarshal.com) — RevO
 Maintained by [Ananda Narasimhan](https://www.linkedin.com/in/simhan911). Researching the recommendation→execution gap in enterprise AI — if your agents are stuck in read-only mode, [I want to hear about it](https://www.linkedin.com/in/simhan911).
 
 License: MIT
+
+## Skills
+
+| Skill | What it does |
+|-------|--------------|
+| [`skills/plan-scrutiny`](skills/plan-scrutiny/SKILL.md) | A plan-building coach for Claude. It makes the author answer for every decision (owner, inputs, failure path, approval gate, rejected alternative) in a signed logic ledger, drafts to a scrutiny standard distilled from real leadership reviews, then rehearses the review. Built because people who build plans with AI hand it the thinking and cannot defend the result. |
