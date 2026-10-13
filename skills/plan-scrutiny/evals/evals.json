@@ -1,0 +1,48 @@
+{
+  "skill_name": "plan-scrutiny",
+  "evals": [
+    {
+      "id": 1,
+      "name": "rollout-plan-build",
+      "prompt": "I need a rollout plan for moving our SDR team's outbound sequences from Apollo to HubSpot Sequences. 6 SDRs, two team leads (Priya and Tom), RevOps is me (Sam). Leadership reviews it Thursday and they are picky: they always ask who owns what, what happens when something breaks, and why we didn't do it another way. My rough thinking: migrate templates week 1, run both tools in parallel week 2, cut over week 3, switch Apollo off week 4. Help me build the plan.",
+      "expected_output": "Does not write the full plan straight away. Frames the review, asks a short batch of concrete questions (owners, inputs, failure paths, what is fixed), starts a logic ledger in the user's words, and explains the loop (questions, ledger sign-off, draft, rehearsal).",
+      "files": [],
+      "expectations": [
+        "Asks the user questions before writing a full plan, rather than delivering a complete week-by-week plan in the first response",
+        "Questions are batched (roughly four to six per message), concrete, and cover owner, inputs/source, and failure path",
+        "Introduces a logic ledger or decision record where the user's reasoning will be captured and signed off by the user",
+        "Does not invent the reasoning for the user's choices (e.g. why parallel-run is one week) but asks for it or offers options with trade-offs",
+        "Uses plain language with no slogans or punch lines"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "scrutinise-draft",
+      "prompt": "Here's my draft onboarding process for new client accounts at our agency. Poke holes in it the way my leadership team would before I send it to them.\n\n1. Sales hands the signed SOW to delivery.\n2. Delivery lead assigns an account manager.\n3. The AM sets up the client in HubSpot and creates a Slack channel.\n4. Kickoff call within a week.\n5. Weekly status email goes out automatically from HubSpot.\n6. QBR every quarter.",
+      "expected_output": "A rehearsal-style set of reviewer questions grouped by category (language, reality, completeness, ownership, control, reasoning, improvement), each phrased as a reviewer would ask, with the weak points called gaps. Flags the automated external email as needing a person to approve. Does not silently rewrite the plan with invented reasoning; asks the user to answer.",
+      "files": [],
+      "expectations": [
+        "Produces reviewer-style questions grouped by category rather than a rewritten plan",
+        "Flags that the automated weekly status email leaves the company without a person approving it",
+        "Asks who owns each step by name and who the backup is",
+        "Asks what happens on failure or unhappy paths (SOW incomplete, AM unavailable, client does not show for kickoff, client goes quiet)",
+        "Calls weak points gaps rather than problems or failures",
+        "Asks the user to answer the questions rather than inventing answers on their behalf"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "just-write-it",
+      "prompt": "just write me the 30-60-90 day onboarding plan for a new inside sales rep joining the HireRight account, I don't have time for back and forth, I need to send it to the account director tonight",
+      "expected_output": "Acknowledges the time pressure, states the risk in one sentence, offers the compressed version (three questions per block) and still produces a ledger with the user's decisions marked as open. Where it must propose, it gives options with trade-offs and asks the user to pick and give a reason, rather than silently deciding. Marks assumptions and 'to confirm' items.",
+      "files": [],
+      "expectations": [
+        "Acknowledges the time pressure and offers a compressed path rather than refusing or ignoring it",
+        "Does not silently decide the key choices; proposes options with one-line trade-offs and asks the user to pick with a reason",
+        "Includes a logic ledger or decision list with open items for the user to sign off, with assumptions labelled",
+        "Marks unknown facts as assumptions or to confirm rather than inventing them",
+        "Keeps language plain, with no slogans or punch lines"
+      ]
+    }
+  ]
+}
