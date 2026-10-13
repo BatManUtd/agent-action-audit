@@ -9,7 +9,7 @@
       "files": [],
       "expectations": [
         "Asks the user questions before writing a full plan, rather than delivering a complete week-by-week plan in the first response",
-        "Questions are batched (roughly four to six per message), concrete, and cover owner, inputs/source, and failure path",
+        "Questions are batched (roughly four to six per message), concrete, and ask what is already decided, who else is involved, and what inputs or volumes are in flight, rather than being a generic list",
         "Introduces a logic ledger or decision record where the user's reasoning will be captured and signed off by the user",
         "Does not invent the reasoning for the user's choices (e.g. why parallel-run is one week) but asks for it or offers options with trade-offs",
         "Uses plain language with no slogans or punch lines"
@@ -22,7 +22,7 @@
       "expected_output": "A rehearsal-style set of reviewer questions grouped by category (language, reality, completeness, ownership, control, reasoning, improvement), each phrased as a reviewer would ask, with the weak points called gaps. Flags the automated external email as needing a person to approve. Does not silently rewrite the plan with invented reasoning; asks the user to answer.",
       "files": [],
       "expectations": [
-        "Produces reviewer-style questions grouped by category rather than a rewritten plan",
+        "Produces reviewer-style questions organised by the draft's steps and/or by category, with a group for what is missing entirely, rather than a rewritten plan",
         "Flags that the automated weekly status email leaves the company without a person approving it",
         "Asks who owns each step by name and who the backup is",
         "Asks what happens on failure or unhappy paths (SOW incomplete, AM unavailable, client does not show for kickoff, client goes quiet)",
@@ -38,8 +38,8 @@
       "files": [],
       "expectations": [
         "Acknowledges the time pressure and offers a compressed path rather than refusing or ignoring it",
-        "Does not silently decide the key choices; proposes options with one-line trade-offs and asks the user to pick with a reason",
-        "Includes a logic ledger or decision list with open items for the user to sign off, with assumptions labelled",
+        "Provides a draft now (does not make the draft conditional on answering questions) with the key choices visibly tagged as options with one-line trade-offs or as assumptions, and asks the user to pick with a reason",
+        "Includes a logic ledger or decision list with open rows for the user to sign off, one per tagged choice or assumption, with a short checklist for the user",
         "Marks unknown facts as assumptions or to confirm rather than inventing them",
         "Keeps language plain, with no slogans or punch lines"
       ]

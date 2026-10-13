@@ -34,7 +34,7 @@ Rules for this stage:
 - When the user answers, write the answer into the ledger in their words, not in polished prose. Their words are what they will remember under review.
 - When the user says "you decide" or "whatever is standard", do not decide. Give two or three options with the trade-off of each in one line, ask them to pick, and ask for a one-sentence reason. Record the entry as "AI proposed, user chose, reason: ...". A choice without a reason is not signed off.
 - When an answer is vague ("we'll handle it", "the team will know"), ask the 5 Whys version: who exactly, by when, from what input, and what happens if they do not.
-- When the user is in a hurry, run the compressed version: three questions per block (who owns it, what comes in and from where, what happens when it fails), and tell them which blocks are thin so they can come back.
+- When the user is short on time, do not make them answer from a blank page. Switch to draft-to-decide (see "Three speeds" below): write the draft now with every decision you made in their place visibly tagged, and hand them a ledger of open rows to choose and sign. Their effort becomes picking and confirming, which takes minutes, instead of answering fifteen questions, which they have already told you they will not do.
 
 Stop questioning a block when it has: an owner with a backup, inputs with a source and a provider, an output, a failure or cold path, an approval gate for anything external or irreversible, and a stated reason for the main choice.
 
@@ -68,6 +68,8 @@ Before the user walks into the room, play the reviewers. Using `assets/scrutiny-
 
 Grade each answer as clear, partial, or cannot explain. Anything not clear goes back to the ledger: either the reasoning was never theirs, or the plan says something the user does not believe. Fix the ledger, then the plan, then re-ask only those questions.
 
+Name what is weak as a gap, never a problem or a failure, in the questions and in anything you write back. Reviewers read "problem" as blame and defend; they read "gap" as a distance to close and plan.
+
 The rehearsal is done when every question is answered clearly and the user can give the 60-second summary (what the plan does, the three decisions that matter most, and the one thing they want the reviewers to decide).
 
 ### 6. Deliver the pack
@@ -80,9 +82,22 @@ Deliver four things, in this order:
 
 If the plan will be published as an artifact or a document, the ledger and the rehearsal sheet can be an appendix or a separate file. They are for the user, not necessarily for the reviewers, but the user should be able to open them in the room.
 
+## Three speeds
+
+The user's time is the constraint; the ledger is the constant. Pick the speed from what they tell you, and say which one you are running.
+
+| Speed | When | What you do |
+|---|---|---|
+| Full | Days before the review, plan is new or contested | Stages 1 to 6 as written. |
+| Compressed | A day or two, or the plan is mostly settled | Framing in one message, then three questions per block (owner and backup, inputs and source, failure path), then draft, then a short rehearsal of the eight most likely questions. |
+| Draft-to-decide | "No time", "just write it", "sending tonight" | Write the draft now. Every choice you made in the user's place carries a visible tag in the text: `[assumption: ...]` for a fact you do not have, `[choose: A (trade-off) / B (trade-off)]` for a decision that is theirs. Keep the tags to the decisions a reviewer will ask about, not every sentence. Below the draft, give the ledger with one open row per tag and a blank reasoning column, and a ten-minute checklist: pick each choice, write one line of reasoning, strike any assumption that is wrong. Then the compressed rehearsal: five questions the reviewer will ask, for the user to answer in their head before sending. |
+
+Draft-to-decide is not the AI deciding. The draft is a set of options laid out in context so the user can decide fast. The ledger still goes out with blank reasoning until they fill it, and you say so.
+
 ## Things that go wrong, and what to do
 
-- **The user wants to skip the questions.** Say what the risk is in one sentence (they will be asked and will not have an answer), offer the compressed version, and keep the ledger. Do not silently write the plan.
+- **The user wants to skip the questions.** Say the risk in one sentence (they will be asked and will not have an answer), then run draft-to-decide. Do not refuse to draft, and do not make the draft conditional on answers. Do not silently write the plan either: the tags and the ledger are what make the difference.
+- **You are reviewing a draft the user brought.** Play the reviewers from the start: questions grouped by the draft's own steps (that is how the reviewer will read it), each tagged with its category letter from the scrutiny standard, plus a "missing entirely" group for stakeholders, owners, measures and the review loop. Name weak points as gaps. Ask, do not prescribe: a rewritten step with your reasoning in it is the failure this skill exists to prevent. End with the framing questions and the loop.
 - **You catch yourself writing the reasoning.** Stop, turn it into a question or an option set, and hand it back.
 - **The plan has a block with no owner.** It is not a block yet. Ask.
 - **The user uses a word reviewers will not understand.** Ask them to say it in plain words, and use their plain words in the plan.
