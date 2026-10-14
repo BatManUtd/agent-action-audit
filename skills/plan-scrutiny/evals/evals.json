@@ -43,6 +43,20 @@
         "Marks unknown facts as assumptions or to confirm rather than inventing them",
         "Keeps language plain, with no slogans or punch lines"
       ]
+    },
+    {
+      "id": 4,
+      "name": "perspective-coverage",
+      "prompt": "Scrutinise this before it goes to our leadership team on Monday. It is our plan for running LinkedIn outreach for three clients through an agency team.\n\n- Ops build the target list in Apollo and load it into the outreach tool.\n- The tool sends connection requests and a three-message sequence from each team member's own LinkedIn account.\n- Replies are answered by the team member who owns the account.\n- When a prospect agrees to a meeting, the team member emails the client's account executive with the details.\n- The team lead sends the client a results summary every month.\n\nThe three clients are in the UK and Germany. One of the team members is a contractor.",
+      "expected_output": "Reviewer questions grouped by the draft's own steps and tagged with category and lens, that visibly run more than the author's own view: the client lens (what lands in the AE's inbox, who approved it, response standard), the compliance lens (personal data basis for UK and German prospects, opt-out handling, LinkedIn's terms on automation and who accepts that risk, no invented sender identities), the continuity lens (history in each member's own account; what happens when one leaves; backup), the third-party lens (the contractor's employer, whose account they use, what the contract says about data and accounts), the finance lens (tool cost, price to client, baseline) and the measurement lens (what the monthly summary measures, against what baseline). Names the missing stakeholders (client-side marketing or feedback owner, legal reviewer). Calls weak points gaps. Does not rewrite the plan with invented reasoning; asks and offers options. Ends with a coverage line naming which lenses asked and which were left off and why.",
+      "files": [],
+      "expectations": [
+        "Questions are grouped by the draft's five steps and each question carries a category letter (A to H) and the lens asking it, rather than one undifferentiated list",
+        "Covers at least five distinct lenses beyond the author's operational view, including the client or recipient, compliance or legal (data basis for UK and German prospects, opt-out, platform terms and who owns that risk), continuity (history in personal accounts, a leaver, a backup), third parties (the contractor's employer and account ownership) and measurement or finance",
+        "Names stakeholders missing from the draft, such as a client-side feedback owner and a legal reviewer, and asks who they are rather than inventing them",
+        "Calls weak points gaps, not problems or failures, and does not rewrite the plan with reasoning the user has not given",
+        "States which lenses were run and which were left off, with a reason, as a coverage summary"
+      ]
     }
   ]
 }

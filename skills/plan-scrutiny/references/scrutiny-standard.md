@@ -62,6 +62,22 @@ Use it twice: as a drafting checklist, and as the category list for the rehearsa
 
 **G2. Feedback has a route into the plan.** Who collects it, where it is logged, who turns it into a change, who confirms the change back. Why: feedback with no route is lost, and the people giving it stop.
 
+## H. Presentation of the deliverable
+
+The plan is also a page, a deck or a document, and reviewers pick at that before they reach the logic. These items came from one review sitting on a finished deck: nine comments, none about the plan, all about whether it could be read.
+
+**H1. It can be read from where the reviewer sits.** Secondary text inside cards is as bright as the heading's supporting line, never a muted grey on a dark card; nothing under 24px on a slide; no cramped card with four lines where the row has room for one. Why: a reviewer who cannot read the second line of a card assumes it hides something.
+
+**H2. The space is used.** Half-empty slide with cramped text in one corner is sent back. Lists become titled rows; nine cards in one row become three by three. Why: cramped text next to empty space reads as a draft.
+
+**H3. One term, everywhere.** The stage names, role names and tool names on slide 3 match slide 11 and match the plan behind the deck. "Was, is, becomes" on one slide and "Today, new way" on another is sent back as "use a better term". Why: a term that changes between sections makes the reviewer re-learn the plan.
+
+**H4. Names are filled in or marked.** Every owner cell holds a real name or "to confirm, [who] by [when]". Why: a reviewer who knows the team fills the blank from memory and then distrusts the rest.
+
+**H5. One message per unit.** A slide title says one thing in a full sentence; a card has a title and one supporting line; a table has at most the rows a reader can take in at once. Why: reviewers read the titles first and decide from them whether to read the rest.
+
+**H6. Nothing is left open in the reviewer-facing version.** Every choice shows one answer and one owner. Open items go in a decisions list as questions, each with a recommendation and an owner, not scattered through the body. Why: a plan that asks the room to decide its contents is read as unfinished; a plan that recommends and asks for approval is read as a plan.
+
 ## Using the standard in a rehearsal
 
-Pick two or three questions from each group A to G that fit the plan. Ask them in the reviewer's voice, short and slightly impatient. The user answers without the document. Grade: clear, partial, cannot explain. Only "clear" passes.
+Pick two or three questions from each group A to H that fit the plan, and make sure every relevant perspective in `perspectives.md` has asked at least two of them. Ask them in the reviewer's voice, short and slightly impatient. The user answers without the document. Grade: clear, partial, cannot explain. Only "clear" passes.

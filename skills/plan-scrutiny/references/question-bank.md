@@ -67,6 +67,10 @@ Pick four to six per message. Ask in the user's vocabulary. Skip anything the co
 - Which sections share a variable (a mode, a role, a region), and does every section treat it the same way?
 - What would you cut if the reviewers said it was too complicated?
 
+## Per perspective
+
+The questions above are organised by block. `perspectives.md` organises them by who is asking. At the end of the question stage, run each lens that is on across the whole plan and ask its "always asks" questions that no block has answered: the client's inbox, the leaver on Friday, the platform-terms risk owner, the monthly cost, the system of record, the baseline, the habit that changes, the third party's employer, the one-sentence version, and whether the page can be read.
+
 ## Vague-answer follow-ups
 
 Use when the answer is "the team will handle it", "we'll figure it out", "standard process":

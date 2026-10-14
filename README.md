@@ -57,4 +57,4 @@ License: MIT
 
 | Skill | What it does |
 |-------|--------------|
-| [`skills/plan-scrutiny`](skills/plan-scrutiny/SKILL.md) | A plan-building coach for Claude. It makes the author answer for every decision (owner, inputs, failure path, approval gate, rejected alternative) in a signed logic ledger, drafts to a scrutiny standard distilled from real leadership reviews, then rehearses the review. Built because people who build plans with AI hand it the thinking and cannot defend the result. |
+| [`skills/plan-scrutiny`](skills/plan-scrutiny/SKILL.md) | A plan-building coach for Claude. It makes the author answer for every decision (owner, inputs, failure path, approval gate, rejected alternative) in a signed logic ledger, drafts to a scrutiny standard distilled from real leadership reviews, then rehearses the review through twelve perspectives (decision-maker, operator, client, continuity, compliance, finance, data, measurement, adoption, third parties, sceptical outsider, reader of the deliverable) so no lens is left for the room. Built because people who build plans with AI hand it the thinking and cannot defend the result. |
